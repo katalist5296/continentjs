@@ -15,7 +15,8 @@
   },
   "homepage": "https://github.com/katalist5296/rage-framework#readme",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "private": true,
   "scripts": {
