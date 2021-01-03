@@ -1,5 +1,3 @@
-import {Application} from "@rage-framework/core";
+import { Application } from '@rage-framework/core';
 
-export abstract class Client extends Application {
-
-}
+export abstract class Client extends Application {}
