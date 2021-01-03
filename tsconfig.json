@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.build.json",
+
+  "compilerOptions": {
+    "experimentalDecorators": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@rage-framework/*": ["packages/*/src"]
+    }
+  }
+}
