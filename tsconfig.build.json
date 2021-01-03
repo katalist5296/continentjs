@@ -3,7 +3,12 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "target": "es5",
-    "lib": ["ES2015", "DOM"],
+    "lib": [
+      "es6",
+      "esnext",
+      "dom",
+      "es2019"
+    ],
     "sourceMap": true,
     "noEmitOnError": true,
     "declaration": true,
