@@ -1,17 +1,9 @@
-import { Server } from '@rage-framework/server';
+import { bootstrap } from '@rage-framework/server';
+import { ServerModule } from './core/server.module';
 
-class GunGameServer extends Server {
-  async onInitialize(): Promise<void> {
-    console.log('server::onInitialize');
+bootstrap(ServerModule, {
+  logger: {
+    logging: true,
+    date: true
   }
-
-  onStarted() {
-    console.log('server::onStarted');
-  }
-
-  async onShutdown(signal: string): Promise<void> {
-    console.log('server::onShutdown');
-  }
-}
-
-export default new GunGameServer();
+});

@@ -1,14 +1,23 @@
-import { Application } from '@rage-framework/core';
-import { ShutdownSignal } from '../enums/shutdown-signal.enum';
+import { Service } from '@rage-framework/core';
+import { Observable, Subject } from 'rxjs';
 
-export abstract class Server extends Application {
-  constructor() {
-    super();
+export enum ShutdownSignal {
+  SIGHUP = 'SIGHUP',
+  SIGINT = 'SIGINT',
+  SIGQUIT = 'SIGQUIT',
+  SIGILL = 'SIGILL',
+  SIGTRAP = 'SIGTRAP',
+  SIGABRT = 'SIGABRT',
+  SIGBUS = 'SIGBUS',
+  SIGFPE = 'SIGFPE',
+  SIGSEGV = 'SIGSEGV',
+  SIGUSR2 = 'SIGUSR2',
+  SIGTERM = 'SIGTERM',
+}
 
-    this.initShutdownHooks();
-  }
-
-  private initShutdownHooks() {
+@Service()
+export class ExitHandlerService {
+  init() {
     const signals = Object.keys(ShutdownSignal);
     this.listenToShutdownSignals(signals);
   }
@@ -17,7 +26,7 @@ export abstract class Server extends Application {
     const cleanup = async (signal: string) => {
       try {
         signals.forEach((sig) => process.removeListener(sig, cleanup));
-        await this.onShutdown(signal);
+        console.log('AppStopped');
         process.kill(process.pid, signal);
       } catch (err) {
         console.log((err as Error)?.stack);
@@ -29,6 +38,4 @@ export abstract class Server extends Application {
       process.on(signal as any, cleanup);
     });
   }
-
-  abstract onShutdown(signal: string): Promise<void>;
 }

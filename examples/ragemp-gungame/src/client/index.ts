@@ -1,13 +1,4 @@
-import { Client } from '@rage-framework/client';
+import { bootstrap } from '@rage-framework/client';
+import { ClientModule } from './core/client.module';
 
-class GunGameClient extends Client {
-  async onInitialize(): Promise<void> {
-    console.log('client::onInitialize');
-  }
-
-  onStarted() {
-    console.log('client::onInitialize');
-  }
-}
-
-export default new GunGameClient();
+bootstrap(ClientModule);
