@@ -1,6 +1,6 @@
 {
   "name": "@rage-framework/ragemp-gungame-example",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index",
   "types": "dist/index",
   "files": [
@@ -28,9 +28,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@rage-framework/client": "^0.1.1",
-    "@rage-framework/core": "^0.1.1",
-    "@rage-framework/server": "^0.1.1"
+    "@rage-framework/client": "^0.1.2",
+    "@rage-framework/core": "^0.1.2",
+    "@rage-framework/server": "^0.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

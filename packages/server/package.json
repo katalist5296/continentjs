@@ -1,6 +1,6 @@
 {
   "name": "@rage-framework/server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index",
   "types": "dist/index",
   "files": [
@@ -28,7 +28,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@rage-framework/core": "^0.1.1"
+    "@rage-framework/core": "^0.1.2"
   },
   "devDependencies": {
     "typescript": "^4.1.3"
