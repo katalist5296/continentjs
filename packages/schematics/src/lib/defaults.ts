@@ -1,7 +1,7 @@
 export const DEFAULT_AUTHOR = '';
 export const DEFAULT_DESCRIPTION = '';
 export const DEFAULT_LANGUAGE = 'ts';
-export const DEFAULT_VERSION = '0.2.0';
+export const DEFAULT_VERSION = '0.2.2';
 export const DEFAULT_PATH_NAME = 'src';
 export const DEFAULT_LIB_PATH = 'libs';
 export const DEFAULT_APPS_PATH = 'apps';

@@ -38,7 +38,7 @@
     "version": {
       "type": "string",
       "description": "Nest application version.",
-      "default": "0.2.0"
+      "default": "0.2.2"
     },
     "language": {
       "type": "string",
