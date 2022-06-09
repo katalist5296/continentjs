@@ -1,6 +1,6 @@
 {
   "name": "@continentjs/metadata",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "main": "dist/index",
   "types": "dist/index",
   "files": [
@@ -24,7 +24,7 @@
     "test:watch": "jest --watchAll --config ../../jest.config.js"
   },
   "dependencies": {
-    "@continentjs/utils": "^0.2.1",
+    "@continentjs/utils": "^0.2.3",
     "reflect-metadata": "^0.1.13"
   },
   "publishConfig": {
@@ -33,5 +33,5 @@
   "engines": {
     "node": ">= 12.10.0"
   },
-  "gitHead": "f0cebb345de4c5e366a0fda062a1665ff8202d64"
+  "gitHead": "cd3cd16bfc64a1276ce162497fab058a994ab844"
 }

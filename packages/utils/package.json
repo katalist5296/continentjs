@@ -1,6 +1,6 @@
 {
   "name": "@continentjs/utils",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "main": "dist/index",
   "types": "dist/index",
   "files": [
@@ -26,5 +26,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "f0cebb345de4c5e366a0fda062a1665ff8202d64"
+  "gitHead": "cd3cd16bfc64a1276ce162497fab058a994ab844"
 }
