@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "outDir": "../../dist/client_packages/client"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

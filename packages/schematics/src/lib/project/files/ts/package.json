@@ -1,0 +1,35 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "author": "<%= author %>",
+  "private": true,
+  "license": "UNLICENSED",
+  "workspaces": {
+    "packages": [
+      "./apps/*",
+      "./libs/*"
+    ]
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "npm run build:server:dev && npm run build:client:dev",
+    "build:server:dev": "continentjs build @app/server",
+    "build:client:dev": "continentjs build @app/client",
+    "start": "continentjs start",
+    "start:dev": "continentjs start --debug"
+  },
+  "dependencies": {
+    "@continentjs/core": "^<%= version %>"
+  },
+  "devDependencies": {
+    "@continentjs/cli": "^<%= version %>",
+    "@continentjs/schematics": "^<%= version %>",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.2.4"
+  },
+  "engines": {
+    "node": ">=12.9.0"
+  }
+}

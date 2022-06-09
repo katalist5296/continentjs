@@ -1,0 +1,23 @@
+{
+  "collection": "@continentjs/schematics",
+  "projects": {
+    "@app/server": {
+      "type": "application",
+      "root": "packages/server",
+      "entryFile": "index",
+      "sourceRoot": "apps/server/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/server/tsconfig.app.json"
+      }
+    },
+    "@app/client": {
+      "type": "application",
+      "root": "client_packages",
+      "entryFile": "index",
+      "sourceRoot": "apps/client/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/client/tsconfig.app.json"
+      }
+    }
+  }
+}

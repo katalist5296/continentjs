@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "project": {
+      "factory": "./lib/project/project.factory#main",
+      "description": "Create a ContinentJS project.",
+      "schema": "./lib/project/schema.json"
+    }
+  }
+}

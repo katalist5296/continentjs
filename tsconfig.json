@@ -6,7 +6,7 @@
 
     "baseUrl": ".",
     "paths": {
-      "@rage-framework/*": ["packages/*/src"]
+      "@continentjs/*": ["packages/*/src"]
     }
   }
 }

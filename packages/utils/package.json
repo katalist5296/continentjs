@@ -1,0 +1,29 @@
+{
+  "name": "@continentjs/utils",
+  "version": "0.2.0",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katalist5296/continentjs.git",
+    "directory": "packages/utils"
+  },
+  "bugs": {
+    "url": "https://github.com/katalist5296/continentjs/issues"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "build:watch": "tsc --watch --project tsconfig.build.json",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc --project tsconfig.build.json",
+    "test": "jest --config ../../jest.config.js",
+    "test:watch": "jest --watchAll --config ../../jest.config.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

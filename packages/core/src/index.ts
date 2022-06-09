@@ -1,12 +1,8 @@
-import 'reflect-metadata';
+export {ModuleInjector, SyncModuleInjector, IModuleMetadata} from "@continentjs/modules";
+export * from "@continentjs/di";
+export * from "@continentjs/utils";
+export * from "@continentjs/metadata";
 
-export * from './container/index';
-export * from './helpers/index';
+export * from "./decorators";
 
-export * from './decorators/module';
-export * from './decorators/service';
-export * from './decorators/injector';
-export * from './decorators/behavior';
-
-export * from './services/application.service';
-export * from './services/config'
+export { ContinentFactory } from './factory';

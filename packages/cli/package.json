@@ -1,0 +1,88 @@
+{
+  "name": "@continentjs/cli",
+  "version": "0.2.0",
+  "description": "ContinentJS - modern, fast, powerful ragemp framework (@cli)",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">= 10.13.0",
+    "npm": ">= 6.11.0"
+  },
+  "bin": {
+    "nest": "bin/continentjs.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "gulp clean:bundle",
+    "format": "prettier --write \"**/*.ts\"",
+    "lint": "eslint '{lib,commands,actions}/**/*.ts' --fix",
+    "start": "node bin/nest.js",
+    "prepack": "npm run build",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "test": "jest --config test/jest-config.json",
+    "test:dev": "npm run clean && jest --config test/jest-config.json --watchAll",
+    "prerelease": "npm run build",
+    "release": "release-it"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@angular-devkit/core": "13.3.6",
+    "@angular-devkit/schematics": "13.3.6",
+    "@angular-devkit/schematics-cli": "13.3.6",
+    "@continentjs/schematics": "^0.2.0",
+    "chalk": "3.0.0",
+    "chokidar": "3.5.3",
+    "cli-table3": "0.6.2",
+    "commander": "4.1.1",
+    "fork-ts-checker-webpack-plugin": "7.2.11",
+    "inquirer": "7.3.3",
+    "node-emoji": "1.11.0",
+    "ora": "5.4.1",
+    "os-name": "4.0.1",
+    "rimraf": "3.0.2",
+    "shelljs": "0.8.5",
+    "source-map-support": "0.5.21",
+    "tree-kill": "1.2.2",
+    "tsconfig-paths": "3.14.1",
+    "tsconfig-paths-webpack-plugin": "3.5.2",
+    "typescript": "4.6.4",
+    "webpack": "5.72.1",
+    "webpack-node-externals": "3.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.0.2",
+    "@commitlint/config-angular": "17.0.0",
+    "@types/copyfiles": "2.4.1",
+    "@types/inquirer": "7.3.3",
+    "@types/jest": "27.5.2",
+    "@types/node": "16.11.38",
+    "@types/node-emoji": "1.8.1",
+    "@types/ora": "3.2.0",
+    "@types/os-name": "3.1.0",
+    "@types/rimraf": "3.0.2",
+    "@types/shelljs": "0.8.11",
+    "@types/webpack-node-externals": "2.5.3",
+    "@typescript-eslint/eslint-plugin": "5.27.0",
+    "@typescript-eslint/parser": "5.27.0",
+    "delete-empty": "3.0.0",
+    "eslint": "8.16.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "gulp": "4.0.2",
+    "gulp-clean": "0.4.0",
+    "husky": "8.0.1",
+    "jest": "28.1.0",
+    "prettier": "2.6.2",
+    "release-it": "15.0.0",
+    "ts-jest": "28.0.3",
+    "ts-loader": "9.3.0",
+    "ts-node": "10.8.0"
+  },
+  "lint-staged": {
+    "**/*.{ts,json}": []
+  }
+}
