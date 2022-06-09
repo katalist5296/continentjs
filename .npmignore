@@ -14,3 +14,12 @@ lerna.json
 .idea
 .editorconfig
 *.iml
+
+# source
+**/*.ts
+*.ts
+/test
+
+# definitions
+!**/*.d.ts
+!*.d.ts
