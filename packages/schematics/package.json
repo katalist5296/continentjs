@@ -1,6 +1,6 @@
 {
   "name": "@continentjs/schematics",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "ContinentJS - modern, fast, powerful ragemp framework (@schematics)",
   "main": "dist/index.js",
   "files": [
@@ -83,5 +83,5 @@
   "lint-staged": {
     "**/*.{ts,json}": []
   },
-  "gitHead": "cd3cd16bfc64a1276ce162497fab058a994ab844"
+  "gitHead": "9ac5d13df00f6f06646b69f7d833b1150d63b6f2"
 }

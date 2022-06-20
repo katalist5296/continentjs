@@ -5,14 +5,15 @@ import {
   SyncInjector,
   shiftLeft,
   verifyProvider,
-  verifyProviders
+  verifyProviders, Injectable
 } from "@continentjs/di";
 import {isArray} from "@continentjs/utils";
-import {IModuleMetadata} from "./imodule";
-import {Module} from "./module";
+import {IModuleMetadata} from "./interfaces/module.interface";
+import {Module} from "./decorators/module";
 import {getClassMetadata, IMetadata} from "@continentjs/metadata";
 import {AbstractModuleInjector} from "./abstract-module-injector";
 import {ModuleInjector} from "./injector";
+import { IInjectableMetadata } from "./interfaces/injectable.interface";
 
 export class SyncModuleInjector extends AbstractModuleInjector<SyncInjector> {
 
@@ -37,14 +38,28 @@ export class SyncModuleInjector extends AbstractModuleInjector<SyncInjector> {
     if (this.has(provider)) {
       throw new Error(`Module ${getProviderName(provider)} is already initialized`);
     }
+
     const metadata: IMetadata = getClassMetadata(Module, provider.provide);
     const config: IModuleMetadata = metadata.args;
     let moduleProviders: Array<IProvider> = verifyProviders(config.providers);
     const injector = new Injector.Sync(sharedInjector, mutableKeys);
     moduleProviders = this.processImportsAndExports(moduleProviders, config, sharedInjector, mutableKeys);
+
     // create local module injector
     injector.setName(provider);
-    injector.createAndResolve(provider, moduleProviders);
+
+    let notFilterModuleProviders = [...moduleProviders];
+    moduleProviders.forEach((prv) => {
+      const metadata: IMetadata = getClassMetadata(Injectable, prv.provide);
+      const config: IInjectableMetadata = metadata.args;
+
+      if (config.providedIn === 'root') {
+        notFilterModuleProviders = notFilterModuleProviders.filter(provider => provider !== prv);
+        sharedInjector.createAndResolve(prv, []);
+      }
+    });
+
+    injector.createAndResolve(provider, notFilterModuleProviders);
     this._providers.set(provider.provide, injector);
     this._allModulesMetadata.set(provider.provide, config);
   }

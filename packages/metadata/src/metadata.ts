@@ -163,7 +163,7 @@ export function isDecorator(decorator: Function): boolean {
  */
 export function getDecoratorId(decorator: Function, index?: number): string {
   if (isFalsy(decorator[META_ID])) {
-    throw new TypeError(`Decorator must be created via @rif decorator functions: ${decorator.toString()}`);
+    throw new TypeError(`Decorator must be created via @continentjs decorator functions: ${decorator.toString()}`);
   }
   return decorator[META_ID] + (isNumber(index) ? `:${index}` : "");
 }
@@ -174,7 +174,7 @@ export function getDecoratorId(decorator: Function, index?: number): string {
  */
 export function getDecoratorUUID(decorator: Function): string {
   if (isFalsy(decorator[META_UUID])) {
-    throw new TypeError(`Decorator must be created via @rif decorator functions: ${decorator.toString()}`);
+    throw new TypeError(`Decorator must be created via @continentjs decorator functions: ${decorator.toString()}`);
   }
   return decorator[META_UUID];
 }
@@ -186,7 +186,7 @@ export function getDecoratorUUID(decorator: Function): string {
  */
 export function getDecoratorType(decorator: Function): string {
   if (isFalsy(decorator[META_TYPE])) {
-    throw new TypeError(`Decorator must be created via @rif decorator functions: ${decorator.toString()}`);
+    throw new TypeError(`Decorator must be created via @continentjs decorator functions: ${decorator.toString()}`);
   }
   return decorator[META_TYPE];
 }
@@ -197,7 +197,7 @@ export function getDecoratorType(decorator: Function): string {
  */
 export function getDecoratorName(decorator: Function): string {
   if (isFalsy(decorator[META_NAME])) {
-    throw new TypeError(`Decorator must be created via @rif decorator functions: ${decorator.toString()}`);
+    throw new TypeError(`Decorator must be created via @continentjs decorator functions: ${decorator.toString()}`);
   }
   return decorator[META_NAME];
 }

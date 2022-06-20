@@ -1,6 +1,6 @@
 {
   "name": "@continentjs/cli",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "ContinentJS - modern, fast, powerful ragemp framework (@cli)",
   "publishConfig": {
     "access": "public"
@@ -33,7 +33,7 @@
     "@angular-devkit/core": "13.3.6",
     "@angular-devkit/schematics": "13.3.6",
     "@angular-devkit/schematics-cli": "13.3.6",
-    "@continentjs/schematics": "^0.2.3",
+    "@continentjs/schematics": "^0.2.4",
     "chalk": "3.0.0",
     "chokidar": "3.5.3",
     "cli-table3": "0.6.2",
@@ -85,5 +85,5 @@
   "lint-staged": {
     "**/*.{ts,json}": []
   },
-  "gitHead": "cd3cd16bfc64a1276ce162497fab058a994ab844"
+  "gitHead": "9ac5d13df00f6f06646b69f7d833b1150d63b6f2"
 }

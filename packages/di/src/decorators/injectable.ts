@@ -1,6 +1,6 @@
 import {createClassDecorator} from "@continentjs/metadata";
 
-export function Injectable() {
-  return createClassDecorator(Injectable);
+export function Injectable(args?: object) {
+  return createClassDecorator(Injectable, args);
 }
 

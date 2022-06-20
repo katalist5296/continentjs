@@ -1,4 +1,4 @@
-import {IModuleMetadata} from "./imodule";
+import {IModuleMetadata} from "../interfaces/module.interface";
 import {isArray} from "@continentjs/utils";
 import {createClassDecorator} from "@continentjs/metadata";
 

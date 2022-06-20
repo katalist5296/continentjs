@@ -1,5 +1,5 @@
 import {IProvider, verifyProvider} from "@continentjs/di";
-import {IModuleMetadata} from "./imodule";
+import {IModuleMetadata} from "./interfaces/module.interface";
 
 interface Type<T> extends Function {
   new(...args: any[]): T;
