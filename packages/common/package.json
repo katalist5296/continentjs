@@ -1,6 +1,6 @@
 {
   "name": "@continentjs/common",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "main": "dist",
   "types": "dist",
   "files": [
@@ -24,11 +24,11 @@
     "test:watch": "jest --watchAll --config ../../jest.config.js"
   },
   "dependencies": {
-    "@continentjs/core": "^0.2.4",
+    "@continentjs/core": "^0.2.5",
     "axios": "0.27.2"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "9ac5d13df00f6f06646b69f7d833b1150d63b6f2"
+  "gitHead": "c34cb7abf8dc86d9087325e1164740a1dee104a3"
 }
