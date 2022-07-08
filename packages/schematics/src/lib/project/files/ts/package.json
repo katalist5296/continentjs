@@ -20,7 +20,9 @@
     "start:dev": "continentjs start --debug"
   },
   "dependencies": {
-    "@continentjs/core": "^<%= version %>"
+    "@continentjs/core": "^<%= version %>",
+    "@continentjs/common": "^<%= version %>",
+    "rxjs": "^7.5.5"
   },
   "devDependencies": {
     "@continentjs/cli": "^<%= version %>",

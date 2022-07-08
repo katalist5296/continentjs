@@ -1,8 +1,8 @@
 {
-  "name": "@continentjs/core",
+  "name": "@continentjs/common",
   "version": "0.2.4",
-  "main": "dist/index",
-  "types": "dist/index",
+  "main": "dist",
+  "types": "dist",
   "files": [
     "dist"
   ],
@@ -10,7 +10,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/katalist5296/continentjs.git",
-    "directory": "packages/core"
+    "directory": "packages/common"
   },
   "bugs": {
     "url": "https://github.com/katalist5296/continentjs/issues"
@@ -24,16 +24,11 @@
     "test:watch": "jest --watchAll --config ../../jest.config.js"
   },
   "dependencies": {
-    "@continentjs/di": "^0.2.4",
-    "@continentjs/metadata": "^0.2.4",
-    "@continentjs/modules": "^0.2.4",
-    "@continentjs/utils": "^0.2.4"
+    "@continentjs/core": "^0.2.4",
+    "axios": "0.27.2"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "engines": {
-    "node": ">= 12.10.0"
   },
   "gitHead": "9ac5d13df00f6f06646b69f7d833b1150d63b6f2"
 }

@@ -5,7 +5,7 @@ import {
   shiftLeft,
   Injectable,
   verifyProvider,
-  verifyProviders
+  verifyProviders, isClassProvider
 } from "@continentjs/di";
 import {isArray} from "@continentjs/utils";
 import {IModuleMetadata} from "./interfaces/module.interface";
@@ -55,15 +55,17 @@ export class ModuleInjector extends AbstractModuleInjector<Injector> {
     injector.setName(provider);
 
     let notFilterModuleProviders = [...moduleProviders];
-    moduleProviders.forEach((prv) => {
-      const metadata: IMetadata = getClassMetadata(Injectable, prv.provide);
-      const config: IInjectableMetadata = metadata.args;
+    for (const prv of moduleProviders) {
+      if (isClassProvider(prv)) {
+        const metadata: IMetadata = getClassMetadata(Injectable, prv.provide);
+        const config: IInjectableMetadata = metadata?.args;
 
-      if (config.providedIn === 'root') {
-        notFilterModuleProviders = notFilterModuleProviders.filter(provider => provider !== prv);
-        sharedInjector.createAndResolve(prv, []);
+        if (config?.providedIn === 'root') {
+          notFilterModuleProviders = notFilterModuleProviders.filter(provider => provider !== prv);
+          await sharedInjector.createAndResolve(prv, []);
+        }
       }
-    });
+    }
 
     await injector.createAndResolve(provider, notFilterModuleProviders);
     this._providers.set(provider.provide, injector);
